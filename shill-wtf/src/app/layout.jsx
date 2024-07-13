@@ -16,6 +16,8 @@ export const metadata = {
   description: "SHILL YOURR SHITT",
 };
 
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

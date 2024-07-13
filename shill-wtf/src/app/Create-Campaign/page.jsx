@@ -1,9 +1,12 @@
+"use client"
 import Image from "next/image";
 import CreateCampaignForm from "./CreateCampaignForm";
+import { SlideInOut } from "../animations";
 
 
 export default function CreateToken() {
   return (
+    <SlideInOut>
     <main className="flex min-h-screen flex-col items-center justify-center p-24 
     bg-gradient-to-b from-white via-pink-200 to-pink-300">
       <div className="flex gap-10 h-[70vh]">
@@ -20,5 +23,6 @@ export default function CreateToken() {
       
       </div>
     </main>
+    </SlideInOut>
   );
 }

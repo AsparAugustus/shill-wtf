@@ -1,8 +1,11 @@
+"use client"
 import Image from "next/image";
 // import NavBar from "./components/nav/NavBar.jsx"
+import { SlideInOut } from "./animations";
 
 export default function Home() {
   return (
+    <SlideInOut>
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <Image
         src="/indexPage/popups.png"
@@ -14,5 +17,6 @@ export default function Home() {
       />
       <h1 className="text-5xl">HOME</h1>
     </main>
+      </SlideInOut>
   );
 }

@@ -20,13 +20,13 @@ const NavBar = () => {
             className={`handwriting text-xl ${activeButton === 'CAMPAIGN MEME' ? 'text-black' : 'text-gray-300'}`}
             onClick={() => setActiveButton('CAMPAIGN MEME')}
           >
-            CAMPAIGN MEME
+            START CAMPAIGN
           </button>
           <button
             className={`handwriting text-xl ${activeButton === 'REGISTER SHILLER' ? 'text-black' : 'text-gray-300'}`}
             onClick={() => setActiveButton('REGISTER SHILLER')}
           >
-            REGISTER SHILLER
+            CAMPAIGNS
           </button>
         </div>
 
@@ -50,7 +50,7 @@ const NavBar = () => {
         alt="nav-bottom"
         width={1000}
         height={100}
-        style={{width: "100vw", position: 'absolute', zIndex:"0", top:"-40px"}}
+        style={{width: "100vw", position: 'absolute', zIndex:"1", top:"-40px"}}
         priority
       />
     </div>

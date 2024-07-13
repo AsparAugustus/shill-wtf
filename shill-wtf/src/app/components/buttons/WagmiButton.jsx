@@ -36,7 +36,7 @@ const Button = ({setisLoading, isLoading}) => {
     };
 
     return (
-        <button onClick={handleButtonClick}>
+        <button onClick={() => {}}>
             Call Smart Contract
         </button>
     );

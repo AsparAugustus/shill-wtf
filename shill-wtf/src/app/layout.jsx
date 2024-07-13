@@ -1,7 +1,9 @@
 import "@rainbow-me/rainbowkit/styles.css";
 import "./globals.css";
+import App from "./app";
 
 import { Inter } from "next/font/google";
+import { Providers } from "./providers";
 // import '../styles/fonts.css'
 
 
@@ -16,7 +18,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}</body>
+      <Providers>
+      <App>{children}</App>
+      </Providers>
+    
+        </body>
     </html>
   );
 }

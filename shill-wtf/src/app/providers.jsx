@@ -95,6 +95,7 @@ export function Providers({ children }) {
                                 },
                             }}
                         />
+                        {children}
                     </RainbowKitProvider>
                 </QueryClientProvider>
             </WagmiProvider>

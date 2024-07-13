@@ -41,8 +41,8 @@ const NavBar = () => {
         src="/nav/nav-bottom.png"
         alt="nav-bottom"
         width={1000}
-        height={24}
-        className="w-full relative -z-10 -top-24"
+        height={100}
+        style={{width: "100vw", position: 'absolute', zIndex:"-1", top:"-20px"}}
         priority
       />
     </div>

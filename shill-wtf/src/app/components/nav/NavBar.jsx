@@ -9,10 +9,13 @@ const NavBar = () => {
 
   return (
     <div>
-      <div className="flex justify-between pt-4 px-10 bg-white w-full">
-        <p className="text-4xl">SHILL . WTF</p>
+      <div 
+      
+      className="flex justify-between pt-4 px-10 bg-white w-full relative"
+      styles={{ zIndex: "5", position: "relative" }}>
+        <p className="text-4xl relative z-20 text-black">SHILL . WTF</p>
 
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center space-x-8 relative z-20">
           <button
             className={`handwriting text-xl ${activeButton === 'CAMPAIGN MEME' ? 'text-black' : 'text-gray-300'}`}
             onClick={() => setActiveButton('CAMPAIGN MEME')}
@@ -32,7 +35,12 @@ const NavBar = () => {
           CONNECT WALLET
         </button> */}
 
-        <ConnectButton />
+
+          <div className="relative z-20">
+          <ConnectButton />
+
+          </div>
+      
       </div>
 
   
@@ -42,7 +50,7 @@ const NavBar = () => {
         alt="nav-bottom"
         width={1000}
         height={100}
-        style={{width: "100vw", position: 'absolute', zIndex:"-1", top:"-20px"}}
+        style={{width: "100vw", position: 'absolute', zIndex:"0", top:"-20px"}}
         priority
       />
     </div>

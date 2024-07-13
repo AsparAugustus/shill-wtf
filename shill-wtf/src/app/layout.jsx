@@ -2,10 +2,12 @@ import "@rainbow-me/rainbowkit/styles.css";
 import "./globals.css";
 import App from "./app";
 
+import localFont from "next/font/local";
+const paint = localFont({ src: "./fonts/Paint-BnM5.ttf" });
+
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
-// import '../styles/fonts.css'
-
+import NavBar from "./components/nav/NavBar.jsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +19,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-      <Providers>
-      <App>{children}</App>
-      </Providers>
-    
-        </body>
+      <body className={paint.className}>
+        <Providers>
+          <App>
+            <NavBar />
+            {children}
+          </App>
+        </Providers>
+      </body>
     </html>
   );
 }

@@ -11,8 +11,8 @@ const NavBar = () => {
     <div>
       <div 
       
-      className="flex justify-between pt-4 px-10 bg-white w-full relative"
-      styles={{ zIndex: "5", position: "relative" }}>
+      className="flex justify-between pt-4 px-10 bg-white w-full "
+      styles={{ zIndex: "5", position: "relative", paddingBottom: "-20px"}}>
         <p className="text-4xl relative z-20 text-black">SHILL . WTF</p>
 
         <div className="flex items-center space-x-8 relative z-20">
@@ -50,7 +50,7 @@ const NavBar = () => {
         alt="nav-bottom"
         width={1000}
         height={100}
-        style={{width: "100vw", position: 'absolute', zIndex:"0", top:"-20px"}}
+        style={{width: "100vw", position: 'absolute', zIndex:"0", top:"-40px"}}
         priority
       />
     </div>

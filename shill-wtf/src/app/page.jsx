@@ -9,10 +9,17 @@ export default function Home() {
         alt="nav-bottom"
         width={1000}
         height={100}
-        style={{width: "60vw", position: 'relative', zIndex:"-2", top:"-40px"}}
+        style={{width: "38vw", position: 'relative', zIndex:"-2", top:"-100px"}}
         priority
       />
-      <h1 className="text-5xl">HOME</h1>
+      <Image
+        src="/indexPage/index-frontend.png"
+        alt="nav-bottom"
+        width={1400}
+        height={100}
+        style={{width: "68vw", position: 'relative', zIndex:"-2", top:"-130px"}}
+        priority
+      />
     </main>
   );
 }

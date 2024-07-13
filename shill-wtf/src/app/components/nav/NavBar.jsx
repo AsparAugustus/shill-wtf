@@ -33,10 +33,10 @@ const NavBar = () => {
             className={`handwriting text-xl ${activeButton === 'REGISTER SHILLER' ? 'text-black' : 'text-gray-300'}`}
             onClick={() => {
               setActiveButton('REGISTER SHILLER');
-              router.push('/Create-Campaign');
+              router.push('/Register-Shiller');
             }}
             >
-            CAMPAIGNS
+            REGISTER SHILLER
           </button>
         </div>
 
@@ -52,96 +52,106 @@ const NavBar = () => {
 
 
           <ConnectButton.Custom>
-      {({
-        account,
-        chain,
-        openAccountModal,
-        openChainModal,
-        openConnectModal,
-        authenticationStatus,
-        mounted,
-      }) => {
-        // Note: If your app doesn't use authentication, you
-        // can remove all 'authenticationStatus' checks
-        const ready = mounted && authenticationStatus !== 'loading';
-        const connected =
-          ready &&
-          account &&
-          chain &&
-          (!authenticationStatus ||
-            authenticationStatus === 'authenticated');
+  {({
+    account,
+    chain,
+    openAccountModal,
+    openChainModal,
+    openConnectModal,
+    authenticationStatus,
+    mounted,
+  }) => {
+    const ready = mounted && authenticationStatus !== 'loading';
+    const connected =
+      ready &&
+      account &&
+      chain &&
+      (!authenticationStatus || authenticationStatus === 'authenticated');
 
-        return (
-          <div
-            {...(!ready && {
-              'aria-hidden': true,
-              'style': {
-                opacity: 0,
-                pointerEvents: 'none',
-                userSelect: 'none',
-              },
-            })}
-          >
-            {(() => {
-              if (!connected) {
-                return (
-                  <button onClick={openConnectModal} type="button">
-                    Connect Wallet
-                  </button>
-                );
-              }
+    return (
+      <div
+        {...(!ready && {
+          'aria-hidden': true,
+          style: {
+            opacity: 0,
+            pointerEvents: 'none',
+            userSelect: 'none',
+          },
+        })}
+      >
+        {(() => {
+          if (!connected) {
+            return (
+              <button
+                onClick={openConnectModal}
+                type="button"
+                className="bg-yellow-300 hover:bg-yellow-400 text-black py-2 px-6 rounded-full border border-black handwriting text-2xl"
+              >
+                CONNECT WALLET
+              </button>
+            );
+          }
 
-              if (chain.unsupported) {
-                return (
-                  <button onClick={openChainModal} type="button">
-                    Wrong network
-                  </button>
-                );
-              }
+          if (chain.unsupported) {
+            return (
+              <button
+                onClick={openChainModal}
+                type="button"
+                className="bg-yellow-300 hover:bg-yellow-400 text-black py-2 px-6 rounded-full border border-black handwriting text-2xl"
+              >
+                Wrong network
+              </button>
+            );
+          }
 
-              return (
-                <div style={{ display: 'flex', gap: 12 }}>
-                  <button
-                    onClick={openChainModal}
-                    style={{ display: 'flex', alignItems: 'center' }}
-                    type="button"
+          return (
+            <div style={{ display: 'flex', gap: 12 }}>
+              <button
+                onClick={openChainModal}
+                style={{ display: 'flex', alignItems: 'center' }}
+                type="button"
+                className="bg-yellow-300 hover:bg-yellow-400 text-black py-2 px-6 rounded-full border border-black handwriting text-2xl"
+              >
+                {chain.hasIcon && (
+                  <div
+                    style={{
+                      background: chain.iconBackground,
+                      width: 12,
+                      height: 12,
+                      borderRadius: 999,
+                      overflow: 'hidden',
+                      marginRight: 4,
+                    }}
                   >
-                    {chain.hasIcon && (
-                      <div
-                        style={{
-                          background: chain.iconBackground,
-                          width: 12,
-                          height: 12,
-                          borderRadius: 999,
-                          overflow: 'hidden',
-                          marginRight: 4,
-                        }}
-                      >
-                        {chain.iconUrl && (
-                          <img
-                            alt={chain.name ?? 'Chain icon'}
-                            src={chain.iconUrl}
-                            style={{ width: 12, height: 12 }}
-                          />
-                        )}
-                      </div>
+                    {chain.iconUrl && (
+                      <img
+                        alt={chain.name ?? 'Chain icon'}
+                        src={chain.iconUrl}
+                        style={{ width: 12, height: 12 }}
+                      />
                     )}
-                    {chain.name}
-                  </button>
+                  </div>
+                )}
+                {chain.name}
+              </button>
 
-                  <button onClick={openAccountModal} type="button">
-                    {account.displayName}
-                    {account.displayBalance
-                      ? ` (${account.displayBalance})`
-                      : ''}
-                  </button>
-                </div>
-              );
-            })()}
-          </div>
-        );
-      }}
-    </ConnectButton.Custom>
+              <button
+                onClick={openAccountModal}
+                type="button"
+                className="bg-yellow-300 hover:bg-yellow-400 text-black py-2 px-6 rounded-full border border-black handwriting text-2xl"
+              >
+                {account.displayName}
+                {account.displayBalance
+                  ? ` (${account.displayBalance})`
+                  : ''}
+              </button>
+            </div>
+          );
+        })()}
+      </div>
+    );
+  }}
+</ConnectButton.Custom>
 
 
 

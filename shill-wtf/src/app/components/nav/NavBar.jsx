@@ -15,11 +15,9 @@ const NavBar = () => {
     <div>
       <div 
       
-      className="flex justify-between pt-4 px-10 bg-white w-full relative"
-      styles={{ zIndex: "5", position: "relative" }}>
-        <button className="text-4xl relative z-20 text-black"
-          onClick={() => {router.push('/')}}
-        >SHILL . WTF</button>
+      className="flex justify-between pt-4 px-10 bg-white w-full "
+      styles={{ zIndex: "5", position: "relative", paddingBottom: "-20px"}}>
+        <button onClick={() => {router.push("/")}} className="text-4xl relative z-20 text-black">SHILL . WTF</button>
 
         <div className="flex items-center space-x-8 relative z-20">
           <button
@@ -29,7 +27,7 @@ const NavBar = () => {
               router.push('/Create-Campaign');
             }}
           >
-            CAMPAIGN MEME
+            START CAMPAIGN
           </button>
           <button
             className={`handwriting text-xl ${activeButton === 'REGISTER SHILLER' ? 'text-black' : 'text-gray-300'}`}
@@ -38,7 +36,7 @@ const NavBar = () => {
               router.push('/Create-Campaign');
             }}
             >
-            REGISTER SHILLER
+            CAMPAIGNS
           </button>
         </div>
 
@@ -169,7 +167,7 @@ const NavBar = () => {
         alt="nav-bottom"
         width={1000}
         height={100}
-        style={{width: "100vw", position: 'absolute', zIndex:"0", top:"-20px"}}
+        style={{width: "100vw", position: 'absolute', zIndex:"1", top:"-40px"}}
         priority
       />
     </div>

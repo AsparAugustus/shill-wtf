@@ -3,6 +3,7 @@
 import React from "react";
 import WagmiButton from "../buttons/WagmiButton"
 import { useState } from "react";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 
 const NavBar = () => {
@@ -36,10 +37,12 @@ const NavBar = () => {
     </div>
 
 
-      <button class="bg-yellow-300 hover:bg-yellow-400
-       text-black py-2 px-6 rounded-full border border-black handwriting text-4xl">
+      {/* <button className="bg-yellow-300 hover:bg-yellow-400
+       text-black py-2 px-6 rounded-full border border-black handwriting text-3xl">
         CONNECT WALLET
-    </button>
+    </button> */}
+
+    <ConnectButton />
     </div>
   );
 };

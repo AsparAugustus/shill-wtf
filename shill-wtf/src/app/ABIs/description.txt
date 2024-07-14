@@ -1,0 +1,46 @@
+Functions
+
+    claim
+        Description: Allows a user to claim tokens.
+        Inputs:
+            token (address): The address of the token contract.
+        Outputs: None
+        State Mutability: nonpayable
+
+    claimable
+        Description: Checks the amount of tokens that can be claimed by a shiller.
+        Inputs:
+            token (address): The address of the token contract.
+            shiller (address): The address of the shiller.
+        Outputs:
+            uint256: The amount of tokens claimable.
+        State Mutability: view
+
+    closeEpoch
+        Description: Closes an epoch and distributes rewards to shillers.
+        Inputs:
+            results (tuple[]): An array of EpochResults containing:
+                token (address): The address of the token contract.
+                shillers (address[]): An array of shiller addresses.
+                rewards (uint256[]): An array of reward amounts corresponding to each shiller.
+        Outputs: None
+        State Mutability: nonpayable
+
+    createTokenAndStartCampaign
+        Description: Creates a new token and starts a campaign.
+        Inputs:
+            name (string): The name of the new token.
+            symbol (string): The symbol of the new token.
+            supply (uint256): The total supply of the new token.
+            handle (string): A unique handle for the campaign.
+            tokenLiquidity (uint256): The amount of liquidity to provide for the token.
+            shillReserve (uint256): The amount of tokens reserved for shillers.
+        Outputs: None
+        State Mutability: payable
+
+    launch
+        Description: Launches a token.
+        Inputs:
+            token (address): The address of the token contract.
+        Outputs: None
+        State Mutability: nonpayable

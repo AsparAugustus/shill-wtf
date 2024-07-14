@@ -9,8 +9,9 @@ import {
 } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
 
-import { base, bsc, fantom } from "wagmi/chains";
+import { sepolia } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
 
 // import localFont from "next/font/local";
 // const undead_pixel_11 = localFont({ src: "./fonts/Undead_Pixel_11.ttf" });
@@ -18,7 +19,7 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 const config = getDefaultConfig({
     appName: "DegenCentral",
     projectId: "a8873d62d9825cfefaad2d386c295cc8",
-    chains: [bsc, base, fantom],
+    chains: [sepolia],
     ssr: true, // If your dApp uses server side rendering (SSR)
 });
 
@@ -42,7 +43,6 @@ const rainbowTheme = {
 const queryClient = new QueryClient();
 
 // import { ContextProvider } from "./contexts";
-import { Toaster } from "react-hot-toast";
 // import { TooltipProvider } from "@/app/components/ui/tooltip";
 
 

@@ -1,19 +1,24 @@
+"use client"
 import React from 'react';
 import { useAccount, useWriteContract } from 'wagmi';
+import {shillCoreAbi, shillCoreAddress} from '../.././ABIs/generated'
+import toast from "react-hot-toast";
 
-const Button = ({setisLoading, isLoading}) => {
+const WagmiButton = ({setisLoading = null, isLoading = null}) => {
     const account = useAccount();
-    const writeContract = useWriteContract({
+    const { writeContractAsync } = useWriteContract({
         mutation: {
           onError: (error) => {
-            setisLoading(false);
+            // setisLoading(false);
             toast.error(error.message);
+            console.log("error", error);
           },
           onSuccess: (hash) => {
-            setisLoading(false);
-            setcurrentModalPage(0);
+            console.log("success", hash);
+            // setisLoading(false);
+            // setcurrentModalPage(0);
             toast.success("Token created");
-            onRequestClose();
+            // onRequestClose();
             // onCompleted();
             // incrementLensHubOnchainSigNonce();
             // addTransaction(generateOptimisticPublication({ txHash: hash }));
@@ -25,10 +30,22 @@ const Button = ({setisLoading, isLoading}) => {
     const handleButtonClick = async () => {
         try {
     
-            const result = await writeContract('contractAddress', 'methodName', ['param1', 'param2'], { from: account });
+            writeContractAsync({ 
+              abi : shillCoreAbi,
+              address: shillCoreAddress[11155111],
+              functionName: 'createTokenAndStartCampaign',
+              args: [
+                'MyToken',
+                'MTK',
+                1000000,
+                'my-campaign',
+                1000,
+                5000,
+              ],
+           })
             
        
-            console.log(result);
+       
         } catch (error) {
            
             console.error(error);
@@ -36,10 +53,22 @@ const Button = ({setisLoading, isLoading}) => {
     };
 
     return (
-        <button onClick={() => {handleButtonClick}}>
-            Call Smart Contract
-        </button>
+      <button
+        onClick={() => 
+          handleButtonClick()
+        }
+        style={{
+          padding: '10px 20px',
+          backgroundColor: '#4CAF50',
+          color: 'white',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer',
+        }}
+      >
+        Call Smart Contract
+      </button>
     );
 };
 
-export default Button;
+export default WagmiButton;

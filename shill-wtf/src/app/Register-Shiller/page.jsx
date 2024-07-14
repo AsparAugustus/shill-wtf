@@ -35,11 +35,11 @@ export default function RegisterShiller() {
   return (
     <SlideInOut>
       <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gradient-to-b from-white via-yellow-200 to-yellow-300">
-        <div className="flex gap-10 h-[70vh]">
-          <div className="border border-black h-[380px] w-[800px] justify-center rounded-3xl z-20">
-            <div className="text-black text-2xl font-bold mb-4 mx-5">
+            <div className="text-black text-3xl font-bold mb-4 mx-5">
               REGISTER SHILLER
             </div>
+        <div className="flex gap-10 h-[70vh]" style={{transform: "skewX(-5deg)"}}>
+          <div className=" bg-white border border-black h-[380px] w-[800px] justify-center rounded-3xl z-20">
             <table className="mt-4 text-black w-full border border-black px-2">
               <thead>
                 <tr className="px-5">

@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 
 const NavBar = () => {
-  const [activeButton, setActiveButton] = useState('REGISTER SHILLER');
+  const [activeButton, setActiveButton] = useState('');
 
   const router = useRouter();
 
@@ -36,6 +36,16 @@ const NavBar = () => {
             }}
             >
             REGISTER SHILLER
+          </button>
+
+          <button
+            className={`handwriting text-xl ${activeButton === 'Dashboard' ? 'text-black' : 'text-gray-300'}`}
+            onClick={() => {
+              setActiveButton('Dashboard');
+              router.push('/Dashboard');
+            }}
+            >
+            DASHBOARD
           </button>
         </div>
 

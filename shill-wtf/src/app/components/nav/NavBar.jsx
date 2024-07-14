@@ -14,7 +14,6 @@ const NavBar = () => {
   return (
     <div>
       <div 
-      
       className="flex justify-between pt-4 px-10 bg-white w-full "
       styles={{ zIndex: "5", position: "relative", paddingBottom: "-20px"}}>
         <button onClick={() => {router.push("/")}} className="text-4xl relative z-20 text-black">SHILL . WTF</button>
@@ -177,7 +176,7 @@ const NavBar = () => {
         alt="nav-bottom"
         width={1000}
         height={100}
-        style={{width: "100vw", position: 'absolute', zIndex:"1", top:"-40px"}}
+        style={{width: "100vw", position: 'absolute', zIndex:"1", top:"-32px"}}
         priority
       />
     </div>

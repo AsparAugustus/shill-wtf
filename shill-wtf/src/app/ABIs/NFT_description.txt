@@ -1,0 +1,54 @@
+Functions
+
+    balanceOf
+        Description: Returns the number of tokens owned by a specific address.
+        Inputs:
+            owner: The address of the token owner.
+        Outputs:
+            The number of tokens (uint256) owned by the provided address.
+        State: Read-only (view).
+
+    Example:
+
+    solidity
+
+function balanceOf(address owner) public view returns (uint256)
+
+tokenDesc
+
+    Description: Returns the description of a token by its ID.
+    Inputs:
+        tokenId: The ID of the token.
+    Outputs:
+        The description (string) of the token.
+    State: Read-only (view).
+
+Example:
+
+solidity
+
+function tokenDesc(uint256 tokenId) public view returns (string)
+
+tokenOfOwnerByIndex
+
+    Description: Returns the token ID at a given index of the tokens list of the requested owner.
+    Inputs:
+        owner: The address of the token owner.
+        index: The index of the token in the owner's list of tokens.
+    Outputs:
+        The token ID (uint256) owned by the provided address at the specified index.
+    State: Read-only (view).
+
+Example:
+
+solidity
+
+    function tokenOfOwnerByIndex(address owner, uint256 index) public view returns (uint256)
+
+Summary
+
+    balanceOf(address owner): Returns the total number of tokens owned by the specified address.
+    tokenDesc(uint256 tokenId): Returns the description of the specified token by its ID.
+    tokenOfOwnerByIndex(address owner, uint256 index): Returns the token ID at the given index for the specified owner's token list.
+
+These functions are typical in an NFT (Non-Fungible Token) contract, allowing users to query the number of tokens an address owns, retrieve the description of a specific token, and get the token ID by index for an owner's tokens.

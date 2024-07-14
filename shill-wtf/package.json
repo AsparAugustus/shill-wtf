@@ -11,6 +11,7 @@
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.1.3",
     "@tanstack/react-query": "^5.51.1",
+    "ethers": "^4.0.49",
     "framer-motion": "^11.3.2",
     "next": "14.2.5",
     "react": "^18",

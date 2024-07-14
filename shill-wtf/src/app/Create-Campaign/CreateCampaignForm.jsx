@@ -102,7 +102,7 @@ const CreateTokenForm = () => {
                             value={allocation}
                             onChange={(e) => setAllocation(e.target.value)}
                             style={{width: "200px"}}/>
-            <p className="font-sans" style={{paddingLeft: "40px"}}>{allocation}</p>
+            <p className="font-sans text-black" style={{paddingLeft: "40px"}}>{allocation}</p>
           </div>
           <label htmlFor="shillers_allocation" className="absolute left-0 -top-5 transform translate-y-1/2 bg-yellow-300 px-2 py-1 rounded-full text-gray-700 font-bold">SHILLERS ALLOCATION</label>
         </div>

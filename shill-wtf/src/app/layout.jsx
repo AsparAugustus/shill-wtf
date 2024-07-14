@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "SHILL.WTF",
-  description: "SHILL YOURR SHITT",
+  description: "SHILL YOUR SHIT",
 };
 
 

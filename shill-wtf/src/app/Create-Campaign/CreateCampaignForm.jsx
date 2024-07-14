@@ -1,9 +1,62 @@
 import React from 'react'
 import {useState} from 'react'
 import Image from 'next/image'
+import { useAccount, useWriteContract } from 'wagmi';
+import {shillCoreAbi, shillCoreAddress} from '.././ABIs/generated'
+import toast from "react-hot-toast";
 
 
 const CreateTokenForm = () => {
+
+  const account = useAccount();
+    const { writeContractAsync } = useWriteContract({
+        mutation: {
+          onError: (error) => {
+            // setisLoading(false);
+            toast.error(error.message);
+            console.log("error", error);
+          },
+          onSuccess: (hash) => {
+            console.log("success", hash);
+            // setisLoading(false);
+            // setcurrentModalPage(0);
+            toast.success("Token created");
+            // onRequestClose();
+            // onCompleted();
+            // incrementLensHubOnchainSigNonce();
+            // addTransaction(generateOptimisticPublication({ txHash: hash }));
+          },
+        },
+      });
+
+
+    const handleButtonClick = (event) => {
+      event.preventDefault();
+      try {
+  
+          writeContractAsync({ 
+            abi : shillCoreAbi,
+            address: shillCoreAddress[11155111],
+            functionName: 'createTokenAndStartCampaign',
+            args: [
+              String(tokenName),
+              String(ticker),
+              String(totalSupply),
+              String(handle),
+              String(liquidity),
+              String(allocation),
+            ],
+         })
+          
+     
+     
+      } catch (error) {
+         
+          console.error(error);
+      }
+  };
+
+
   const [handle, setHandle] = useState("...");
   const [tokenName, setTokenName] = useState("...");
   const [ticker, setTicker] = useState("...");
@@ -63,7 +116,8 @@ const CreateTokenForm = () => {
           <label htmlFor="liquidity" className="absolute left-0 transform translate-y-1/2 bg-yellow-300 px-2 py-1 rounded-full text-gray-700 font-bold">LIQUIDITY</label>
         </div>
         <div className="flex items-center justify-between">
-          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">SUBMIT</button>
+          <button onClick={(e) => 
+          handleButtonClick(e)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">SUBMIT</button>
         </div>
       </form>
     </div>
@@ -72,7 +126,7 @@ const CreateTokenForm = () => {
 
 const a = () => {
     return (
-            <form onSubmit={() => {}}>
+            <form>
                 <div style={{display: "flex", flexDirection:"column", paddingLeft:"80px"}}>
                     <div style={{width:"90%"}}>
                         <div> 
@@ -81,7 +135,8 @@ const a = () => {
                     </div>
                     <input type="text" name="name" style={{borderBottom: "1px solid black"}} />
                     <input type="text" name="name" style={{borderBottom: "1px solid black"}} />
-                    <button type="submit">Submit</button>
+                    <button  onClick={() => 
+          handleButtonClick()}>Submit</button>
                 </div>
             </form> 
     )

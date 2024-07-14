@@ -32,7 +32,7 @@ Functions
             name (string): The name of the new token.
             symbol (string): The symbol of the new token.
             supply (uint256): The total supply of the new token.
-            handle (string): A unique handle for the campaign.
+            handle (string): A unique handle for the target Twitter handle.
             tokenLiquidity (uint256): The amount of liquidity to provide for the token.
             shillReserve (uint256): The amount of tokens reserved for shillers.
         Outputs: None

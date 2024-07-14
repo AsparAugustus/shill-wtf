@@ -68,7 +68,7 @@ export function Providers({ children }) {
                         </TooltipProvider> */}
                         <Toaster
                             toastOptions={{
-                                duration: 5000,
+                                duration: 1500,
                                 className: "flex flex-grow",
                                 success: {
                                     style: {

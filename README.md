@@ -9,5 +9,7 @@ A meme launchpad powered by a twitter marketing flywheel and pre mint campaign. 
 #### Sepolia
 0xc7D1750Cb48875373773611e6dfe3b15EE78ee61
 
-
-<img src="https://github.com/AsparAugustus/shill-wtf/blob/main/shill-wtf/screen-grabs/cover-image.jpg" width='40%'>
+----
+| ![Image 1](https://github.com/AsparAugustus/shill-wtf/blob/main/shill-wtf/screen-grabs/1.png) | ![Image 2](https://github.com/AsparAugustus/shill-wtf/blob/main/shill-wtf/screen-grabs/2.png) |
+|:--:|:--:|
+| ![Image 3](https://github.com/AsparAugustus/shill-wtf/blob/main/shill-wtf/screen-grabs/3.png) | ![Image 4](https://github.com/AsparAugustus/shill-wtf/blob/main/shill-wtf/screen-grabs/4.png) |

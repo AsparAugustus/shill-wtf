@@ -1,0 +1,1 @@
+{ "dependencies": { "@wagmi/cli": "^2.1.15", "hardhat": "^2.22.6", "viem": "^2.17.3" }, "devDependencies": { "@nomicfoundation/hardhat-toolbox-viem": "^3.0.0" } }

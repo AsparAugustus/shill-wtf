@@ -1,15 +1,8 @@
 "use client";
 import Image from "next/image";
 import WagmiButton from "../components/buttons/WagmiButton";
-import {useState, useEffect} from "react"
 
 export default function Dashboard() {
-
-  const [tableData, setTableData] = useState([])
-
-  useEffect(() => {
-    setI
-  }, [])
     
   return (
     <main className="flex min-h-screen flex-col items-center justify-start p-24
@@ -34,7 +27,7 @@ export default function Dashboard() {
             </thead>
             <tbody>
               <tr>
-                <td className="py-2 px-4 border-b text-center uppercase">Token 1</td>
+                <td className="py-2 px-4 border-b text-center uppercase">shill the kim</td>
                 <td className="py-2 px-4 border-b text-center uppercase">100</td>
                 <td className="py-2 px-4 border-b text-center">
                   <button className="bg-blue-500 text-white py-1 px-3 rounded uppercase">
@@ -43,7 +36,7 @@ export default function Dashboard() {
                 </td>
               </tr>
               <tr>
-                <td className="py-2 px-4 border-b text-center uppercase">Token 2</td>
+                <td className="py-2 px-4 border-b text-center uppercase">new views</td>
                 <td className="py-2 px-4 border-b text-center uppercase">200</td>
                 <td className="py-2 px-4 border-b text-center">
                   <button className="bg-blue-500 text-white py-1 px-3 rounded uppercase">
@@ -52,8 +45,17 @@ export default function Dashboard() {
                 </td>
               </tr>
               <tr>
-                <td className="py-2 px-4 border-b text-center uppercase">Token 3</td>
-                <td className="py-2 px-4 border-b text-center uppercase">300</td>
+                <td className="py-2 px-4 border-b text-center uppercase">Asian BD</td>
+                <td className="py-2 px-4 border-b text-center uppercase">10</td>
+                <td className="py-2 px-4 border-b text-center">
+                  <button className="bg-blue-500 text-white py-1 px-3 rounded uppercase">
+                    Claim
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 border-b text-center uppercase">CocaineOnChain</td>
+                <td className="py-2 px-4 border-b text-center uppercase">600</td>
                 <td className="py-2 px-4 border-b text-center">
                   <button className="bg-blue-500 text-white py-1 px-3 rounded uppercase">
                     Claim
